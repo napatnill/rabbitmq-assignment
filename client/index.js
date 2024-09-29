@@ -40,7 +40,7 @@ app.post("/placeorder", (req, res) => {
         throw error1;
       }
       var exchange = 'food_topic_exchange';
-      var routingKey = 'order.' + orderItem.name.toLowerCase().replace(/ /g, '_');
+      var routingKey = 'order.' + orderItem.name.toLowerCase().replace(/ /g, '.');
 
       channel.assertExchange(exchange, 'topic', { durable: false });
 
